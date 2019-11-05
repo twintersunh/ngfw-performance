@@ -587,8 +587,8 @@
 
               <t>In the sustain phase, the test equipment SHOULD continue
               generating traffic to constant target value for a constant
-              number of active client IPs. The RECOMMENDED time duration for
-              sustain phase is 600 seconds. This is the phase where
+              number of active client IPs. The mininum RECOMMENDED time duration for
+              sustain phase is 300 seconds. This is the phase where
               measurements occur.</t>
 
               <t>In the ramp down/close phase, no new connections are
