@@ -326,7 +326,7 @@
 
         <t>Large (L) - supported throughput greater than 10Gbit/s</t>
 
-        <t>The Access Conrol Rules (ACL) defined in Table 2 SHOULD be
+        <t>The Access Conrol Rules (ACL) defined in Table 2 MUST be
         configured from top to bottom in the correct order as shown in the
         table. (Note: There will be differences between how security vendors
         implement ACL decision making.) The configured ACL MUST NOT block the
