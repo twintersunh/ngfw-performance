@@ -765,12 +765,6 @@
             between sending a GET request from Client and the receival of the
             complete response from the server.</t>
 
-            <t>Application Transaction Latency<vspace/>This key performance
-            indicator measures the minimum, average and maximum the amount of
-            time to receive all objects from the server. The value of
-            application transaction latency SHOULD be presented in millisecond
-            rounded to zero decimal.</t>
-
             <t>Time to First Byte (TTFB)<vspace/>This key performance
             indicator will measure minimum, average and maximum the time to
             first byte. TTFB is the elapsed time between sending the SYN
