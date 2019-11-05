@@ -282,7 +282,7 @@
         <t><list style="symbols">
             <t>All security inspection enabled<vspace/></t>
 
-            <t>Disposition of all traffic is logged - Logging to an external
+            <t>Disposition of all flows of traffic are logged - Logging to an external
             device is permissible<vspace/></t>
 
             <t>Detection of Common Vulnerabilities and Exposures (CVE)
