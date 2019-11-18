@@ -282,8 +282,8 @@
         <t><list style="symbols">
             <t>All security inspection enabled<vspace/></t>
 
-            <t>Disposition of all flows of traffic are logged - Logging to an external
-            device is permissible<vspace/></t>
+            <t>Disposition of all flows of traffic are logged - Logging to an
+            external device is permissible<vspace/></t>
 
             <t>Detection of Common Vulnerabilities and Exposures (CVE)
             matching the following characteristics when searching the National
@@ -326,11 +326,11 @@
 
         <t>Large (L) - supported throughput greater than 10Gbit/s</t>
 
-        <t>The Access Conrol Rules (ACL) defined in Table 2 MUST be
-        configured from top to bottom in the correct order as shown in the
-        table. (Note: There will be differences between how security vendors
-        implement ACL decision making.) The configured ACL MUST NOT block the
-        test traffic used for the benchmarking test scenarios.</t>
+        <t>The Access Conrol Rules (ACL) defined in Table 2 MUST be configured
+        from top to bottom in the correct order as shown in the table. (Note:
+        There will be differences between how security vendors implement ACL
+        decision making.) The configured ACL MUST NOT block the test traffic
+        used for the benchmarking test scenarios.</t>
 
         <figure title="Table 2: DUT/SUT Access List">
           <artwork>+---------------------------------------------------+---------------+
@@ -587,9 +587,9 @@
 
               <t>In the sustain phase, the test equipment SHOULD continue
               generating traffic to constant target value for a constant
-              number of active client IPs. The mininum RECOMMENDED time duration for
-              sustain phase is 300 seconds. This is the phase where
-              measurements occur.</t>
+              number of active client IPs. The mininum RECOMMENDED time
+              duration for sustain phase is 300 seconds. This is the phase
+              where measurements occur.</t>
 
               <t>In the ramp down/close phase, no new connections are
               established, and no measurements are made. The time duration for
@@ -863,7 +863,7 @@
             validation criteria. Test results validation criteria MUST be
             monitored during the whole sustain phase of the traffic load
             profile.<list style="letters">
-                <t>Number of failed Application transactions (receiving any
+                <t>Number of failed application transactions (receiving any
                 HTTP response code other than 200 OK) MUST be less than 0.001%
                 (1 out of 100,000 transactions) of total attempt
                 transactions</t>
@@ -872,21 +872,20 @@
                 RST sent by DUT/SUT MUST be less than 0.001% (1 out of 100,000
                 connections) of total initiated TCP connections</t>
 
-                <t>Maximum deviation (max. dev) of application transaction
-                time or TTLB (Time To Last Byte) MUST be less than X (The
-                value for "X" will be finalized and updated after completion
-                of PoC test)<vspace/> The following equation MUST be used to
-                calculate the deviation of application transaction latency or
-                TTLB<vspace/> max. dev = max((avg_latency -
-                min_latency),(max_latency - avg_latency)) / (Initial
-                latency)<vspace/> Where, the initial latency is calculated
-                using the following equation. For this calculation, the
-                latency values (min', avg' and max') MUST be measured during
-                test procedure step 1 as defined in <xref
+                <t>Maximum deviation (max. dev) of URL Response Time or TTLB
+                (Time To Last Byte) MUST be less than X (The value for "X"
+                will be finalized and updated after completion of PoC
+                test)<vspace/> The following equation MUST be used to
+                calculate the deviation of URL Response Time or TTLB<vspace/>
+                max. dev = max((avg_latency - min_latency),(max_latency -
+                avg_latency)) / (Initial latency)<vspace/> Where, the initial
+                latency is calculated using the following equation. For this
+                calculation, the latency values (min', avg' and max') MUST be
+                measured during test procedure step 1 as defined in <xref
                 target="Step1_Test_Initialization"/>. <vspace/> The variable
-                latency represents application transaction latency or
-                TTLB.<vspace/> Initial latency:= min((avg' latency - min'
-                latency) | (max' latency - avg' latency))</t>
+                latency represents URL Response Time or TTLB.<vspace/> Initial
+                latency:= min((avg' latency - min' latency) | (max' latency -
+                avg' latency))</t>
 
                 <t>Maximum value of Time to First Byte (TTFB) MUST be less
                 than X</t>
@@ -897,13 +896,15 @@
             <t>Following KPI metrics MUST be reported for this test
             scenario.</t>
 
-            <t>Mandatory KPIs: average Throughput, average Concurrent TCP
-            connections, TTLB/application transaction latency (minimum,
-            average and maximum) and average application transactions per
-            second</t>
+            <t>Mandatory KPIs: average Throughput, TTFB (minimum, average and
+            maximum), TTLB (minimum, average and maximum) and average
+            Application Transactions Per Second</t>
 
-            <t>Optional KPIs: average TCP connections per second, average TLS
-            handshake rate and TTFB</t>
+            <t>Note: TTLB MUST be reported along with min, max and avg object
+            size used in the traffic profile.</t>
+
+            <t>Optional KPIs: average TCP Connections Per Second and average
+            TLS Handshake Rate</t>
           </section>
         </section>
 
@@ -1044,11 +1045,10 @@
           </section>
 
           <section title="Measurement">
-            <t>Following KPI metrics MUST be reported for each test
+            <t>Following KPI metric MUST be reported for each test
             iteration.</t>
 
-            <t>Mandatory KPIs: average TCP connections per second, average
-            Throughput and Average Time to First Byte (TTFB).</t>
+            <t>average TCP Connections Per Second</t>
           </section>
         </section>
 
@@ -1215,9 +1215,7 @@
           <section anchor="Measurement_TP" title="Measurement">
             <t>The KPI metrics MUST be reported for this test scenario:</t>
 
-            <t>Average Throughput, average HTTP transactions per second,
-            concurrent connections, and average TCP connections per
-            second.</t>
+            <t>average Throughput and average HTTP Transactions per Second</t>
           </section>
         </section>
 
@@ -1390,8 +1388,8 @@
             <t>Following KPI metrics MUST be reported for each test scenario
             and HTTP response object sizes separately:</t>
 
-            <t>average TCP connections per second and average application
-            transaction latency</t>
+            <t>TTFB (minimum, average and maximum) and TTLB (minimum, average
+            and maximum)</t>
 
             <t>All KPI's are measured once the target throughput achieves the
             steady state.</t>
@@ -1557,13 +1555,10 @@
           </section>
 
           <section anchor="CC_Measurement" title="Measurement">
-            <t>Following KPI metrics MUST be reported for this test
+            <t>Following KPI metric MUST be reported for this test
             scenario:</t>
 
-            <t>average Throughput, Concurrent TCP connections (minimum,
-            average and maximum), TTLB/ application transaction latency
-            (minimum, average and maximum) and average application
-            transactions per second.</t>
+            <t>average Concurrent TCP Connections</t>
           </section>
         </section>
 
@@ -1731,8 +1726,9 @@
             <t>Following KPI metrics MUST be reported for this test
             scenario:</t>
 
-            <t>average TCP connections per second, average Throughput and
-            Average Time to TCP First Byte.</t>
+            <t>average TCP Connections Per Second, average TLS Handshake Rate
+            (TLS Handshake Rate can be measured in the test scenario using 1KB
+            object size)</t>
           </section>
         </section>
 
@@ -1921,8 +1917,8 @@
           <section anchor="Measurement_HTTPS_TP" title="Measurement">
             <t>The KPI metrics MUST be reported for this test scenario:</t>
 
-            <t>Average Throughput, Average transactions per second, concurrent
-            connections, and average TCP connections per second.</t>
+            <t>average Throughput and average HTTPS Transactions Per
+            Second</t>
           </section>
         </section>
 
@@ -2090,8 +2086,8 @@
             <t>Following KPI metrics MUST be reported for each test scenario
             and HTTPS response object sizes separately:</t>
 
-            <t>average TCP connections per second and average application
-            transaction latency or TTLB</t>
+            <t>TTFB (minimum, average and maximum) and TTLB (minimum, average
+            and maximum)</t>
 
             <t>All KPI's are measured once the target connections per second
             achieves the steady state.</t>
@@ -2099,13 +2095,12 @@
         </section>
 
         <section title="Test Procedures and Expected Results">
-          <t>The test procedure is designed to measure average application
-          transaction latency or TTLB when the DUT is operating close to 50%
-          of its maximum achievable connections per second. This test
-          procedure can be repeated multiple times with different IP types
-          (IPv4 only, IPv6 only and IPv4 and IPv6 mixed traffic distribution),
-          HTTPS response object sizes and single and multiple transactions per
-          connection scenarios.</t>
+          <t>The test procedure is designed to measure average TTFB or TTLB
+          when the DUT is operating close to 50% of its maximum achievable
+          connections per second. This test procedure can be repeated multiple
+          times with different IP types (IPv4 only, IPv6 only and IPv4 and
+          IPv6 mixed traffic distribution), HTTPS response object sizes and
+          single and multiple transactions per connection scenarios.</t>
 
           <section title="Step 1: Test Initialization and Qualification">
             <t>Verify the link status of the all connected physical
@@ -2262,12 +2257,10 @@
           </section>
 
           <section anchor="HTTPS_CC_Measurement" title="Measurement">
-            <t>Following KPI metrics MUST be reported for this test
+            <t>Following KPI metric MUST be reported for this test
             scenario:</t>
 
-            <t>Average Throughput, max. Min. Avg. Concurrent TCP connections,
-            TTLB/application transaction latency and average application
-            transactions per second</t>
+            <t>average Concurrent TCP Connections</t>
           </section>
         </section>
 
